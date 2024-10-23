@@ -6,6 +6,8 @@ export default class ShopUsedCardsPage {
   readonly stateSelector: Locator;
   readonly postalCodeField: Locator;
   readonly continueBTN: Locator;
+  readonly filterToggle: Locator;
+  readonly preOwnedBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -13,6 +15,8 @@ export default class ShopUsedCardsPage {
     this.stateSelector = page.locator(".dcp-header-location-modal-dropdown select") 
     this.postalCodeField = page.locator("input[aria-labelledby='postal-code-hint']")
     this.continueBTN = page.getByRole("button", { name: "Continue"})
+    this.filterToggle = page.locator(".filter-toggle")
+    this.preOwnedBtn = page.locator("button span:has-text('Pre-Owned')")
   }
 
   /**
@@ -78,4 +82,12 @@ export default class ShopUsedCardsPage {
     await this.continueBTN.click()
   }
 
+  /**
+   * Click on the filter button and click on Pre-Owned
+   * There is no need to click on the filter toggle btn because it's filter options are already opened when accesing the page. 
+   */
+  async clickOnFilter (){
+    // await this.filterToggle.first().click()
+    await this.preOwnedBtn.click()
+  }
 }

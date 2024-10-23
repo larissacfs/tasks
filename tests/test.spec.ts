@@ -7,5 +7,7 @@ test('First test', async ({ shopUsedCardsPage }) => {
 
   await shopUsedCardsPage.selectLocation('New South Wales', '2007', true)
 
+  await shopUsedCardsPage.clickOnFilter()
+
 });
 
