@@ -1,6 +1,6 @@
 import { expect, type Page, type Locator } from "@playwright/test";
 
-export default class ShopUsedCardsPage {
+export default class ShopCarsPage {
   page: Page;
   readonly acceptBtn: Locator;
   readonly stateSelector: Locator;
@@ -41,17 +41,13 @@ export default class ShopUsedCardsPage {
    * @param purposePrivate boolean to check if its private or not (it's business)
    */
   async checkElementWorkaround(purposePrivate: Boolean){
-    if (purposePrivate) {
-      await this.page.evaluate(() => {
-        const inputElement = document.querySelector('input[value="P"]') as HTMLInputElement;
+    const value = purposePrivate ? 'P' : 'B';
+    await this.page.evaluate((value) => {
+      const inputElement = document.querySelector(`input[value='${value}']`) as HTMLInputElement;
+      if (inputElement) {
         inputElement.checked = true;
-      });
-    } else {
-      await this.page.evaluate(() => {
-        const inputElement = document.querySelector('input[value="B"]') as HTMLInputElement;
-        inputElement.checked = true;
-      });
-    }
+      }
+    }, value); 
   }
 
   /**
@@ -86,7 +82,7 @@ export default class ShopUsedCardsPage {
    * Click on the filter button and click on Pre-Owned
    * There is no need to click on the filter toggle btn because it's filter options are already opened when accesing the page. 
    */
-  async clickOnFilter (){
+  async selectPreOwnedFilter (){
     // await this.filterToggle.first().click()
     await this.preOwnedBtn.click()
   }

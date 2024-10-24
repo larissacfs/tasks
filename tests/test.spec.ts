@@ -1,13 +1,19 @@
 import { test } from '../fixtures/myFixtures';
 
-test('First test', async ({ shopUsedCardsPage }) => {
-  await shopUsedCardsPage.goto();
+test('First test', async ({ shopCarsPage, preOwnedPage }) => {
+  await shopCarsPage.goto();
 
-  await shopUsedCardsPage.acceptCookies()
+  await shopCarsPage.acceptCookies();
 
-  await shopUsedCardsPage.selectLocation('New South Wales', '2007', true)
+  await shopCarsPage.selectLocation('New South Wales', '2007', true);
 
-  await shopUsedCardsPage.clickOnFilter()
+  await shopCarsPage.selectPreOwnedFilter();
+
+  await preOwnedPage.acceptCookies();
+
+  await preOwnedPage.selectColorFilter('Blue');
+
+  await preOwnedPage.sortResults("Price: High to Low")
 
 });
 
