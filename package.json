@@ -13,7 +13,8 @@
     "ts:clear": "rm -rf dist",
     "compile": "tsc && rm -rf dist",
     "check:git:status": "sh sh_scripts/check_git_status.sh",
-    "lint:fix:unix": "yarn ts:clear && yarn eslint:fix && yarn prettier:cli --write --end-of-line auto"
+    "lint:fix:unix": "yarn ts:clear && yarn eslint:fix && yarn prettier:cli --write --end-of-line auto",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +34,6 @@
     "prettier": "3.3.3",
     "typescript": "5.6.2",
     "typescript-eslint": "8.8.0",
-    "husky": "9.1.6"
+    "husky": "^8.0.0"
   }
 }
