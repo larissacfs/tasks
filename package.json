@@ -8,12 +8,12 @@
     "eslint:fix": "yarn eslint --fix",
     "prettier:cli": "prettier \"**/*.ts\"",
     "prettier:check": "yarn prettier:cli -l",
-    "prettier:fix": "yarn prettier:cli --write --trailing-comma none --single-quote",
+    "prettier:fix": "yarn prettier:cli --write",
     "lint:fix": "yarn ts:clear && yarn eslint:fix && yarn prettier:fix",
     "ts:clear": "rm -rf dist",
     "compile": "tsc && rm -rf dist",
     "check:git:status": "sh sh_scripts/check_git_status.sh",
-    "lint:fix:unix": "yarn ts:clear && yarn eslint:fix && yarn prettier:cli --write --single-quote --trailing-comma none --end-of-line auto"
+    "lint:fix:unix": "yarn ts:clear && yarn eslint:fix && yarn prettier:cli --write --end-of-line auto"
   },
   "keywords": [],
   "author": "",
