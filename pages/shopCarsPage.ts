@@ -110,23 +110,18 @@ export default class ShopCarsPage {
   }
 
   /**
-   * Click on the filter button when accesing the page.
-   * But when only click if the wrapper with the filter menu is not already opened.
+   * Method to click on the filter button when accesing the page.
+   * But it only clicks if the wrapper with the filter menu is not already open.
    */
   async clickOnFilterToggle() {
-    // await this.page.waitForTimeout(10000);
     // Locate the wrapper element
     const wrapper = this.page.locator('.wrapper');
     // Check if the wrapper element contains the 'show' class
     const hasShowClass = await wrapper.evaluate(el => el.classList.contains('show'));
     if (!hasShowClass) {
       // Click the button if the 'show' class is not present
-      // locally this works:
       await this.filterToggle.click() 
-      // workaround as click is not working on CI
-      // await wrapper.evaluate(el => el.classList.add('show'));
     }
-    // await expect(this.page.locator(".wrapper.show")).toBeVisible()
   }
   
   /**
