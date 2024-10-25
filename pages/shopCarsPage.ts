@@ -102,7 +102,7 @@ export default class ShopCarsPage {
     await this.stateSelector.selectOption(state)
     await this.postalCodeField.fill(postalCode)
 
-    // workaround for bug found while checking the radio button and enable contine btn
+    // workaround for bug found while checking the radio button and enable continue btn
     await this.checkElementWorkaround(purposePrivate)
     await this.enableContinueBtnWorkaround()
 
@@ -110,7 +110,7 @@ export default class ShopCarsPage {
   }
 
   /**
-   * Method to click on the filter button when accesing the page.
+   * Method to click on the filter button when accessing the page.
    * But it only clicks if the wrapper with the filter menu is not already open.
    */
   async clickOnFilterToggle() {
@@ -168,7 +168,7 @@ export default class ShopCarsPage {
 
   /**
    * Workaround to click by using page.evaluate() and the Mouse Event. 
-   * This is usefull for when click() is not working. 
+   * This is useful for when click() is not working. 
    */
   async clickByMouseEventWorkaround(value: string){
     await this.page.evaluate((value) => {

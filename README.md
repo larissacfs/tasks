@@ -22,7 +22,7 @@ tests
     task2.spec.ts
 task1.pdf
 ```
-This project also contains es-lint, prettier and husky.
+This project also contains tsc, es-lint, prettier, and husky as linters, code style standardiser and compilers.
 
 ## Installation
 
@@ -32,7 +32,7 @@ Detailed instructions on how to install and set up the project locally. This can
 git clone https://github.com/larissacfs/tasks.git
 
 # Navigate into the directory
-cd repository-name
+cd tasks
 
 # Install Yarn
 npm install -g yarn
@@ -43,25 +43,14 @@ yarn install
 # Init Husky
 npx husky-init
 
-# Erase any auto changes that it may create to have a clean Husky instance:
+# Erase any auto changes that it may create to have a clean Husky instance
 git checkout .
 
-# Then you can run this command to replace the git commit hook:
+# Then you can run this command to replace the git commit hook
 git add .husky/pre-commit
 ```
 
 ## Usage
-
-- Manual compilers run:
-
-```bash
-# TypeScript compiler
-yarn compile
-
-# ESLint + Prettier auto fixes
-yarn lint:fix
-```
-Whenever you make a commit, husky will run these two commands for you. Any fixes need to be added to the current commit (using git commit --amend --no-edit).
 
 - How to run the tests in all browsers 
 
@@ -74,5 +63,17 @@ yarn playwright test
 yarn playwright test --project=chromium
 ```
 
-- How to run the tests in the pipeline
+- How to manually trigger the pipeline
+The pipeline is triggered on a push or on pull requests to the main branch. To run manually, go to the Actions tab, click on "Playwright tests", then click on "Run workflow", chose a branch (main) and then click on "Run workflow".
+
+- Manual compilers run:
+
+```bash
+# TypeScript compiler
+yarn compile
+
+# ESLint + Prettier auto fixes
+yarn lint:fix
+```
+Whenever you make a commit, husky will run these two commands for you. Any fixes need to be added to the current commit (using git commit --amend --no-edit).
 
