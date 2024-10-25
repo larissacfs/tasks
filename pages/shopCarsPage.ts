@@ -110,6 +110,21 @@ export default class ShopCarsPage {
   }
 
   /**
+   * Click on the filter button when accesing the page.
+   * But when only click if the wrapper with the filter menu is not already opened.
+   */
+  async clickOnFilterToggle() {
+    // Locate the wrapper element
+    const wrapper = this.page.locator('.wrapper');
+    // Check if the wrapper element contains the 'show' class
+    const hasShowClass = await wrapper.evaluate(el => el.classList.contains('show'));
+    if (!hasShowClass) {
+      // Click the button if the 'show' class is not present
+      await this.filterToggle.click() 
+    }
+  }
+  
+  /**
    * Select a colour
    * @param colour The color to be selected
    */

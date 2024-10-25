@@ -6,6 +6,8 @@ test('First test', async ({ shopCarsPage }) => {
   await shopCarsPage.acceptCookies();
 
   await shopCarsPage.selectLocation('New South Wales', '2007', true);
+  
+  await shopCarsPage.clickOnFilterToggle();
  
   await shopCarsPage.selectAColor('Cosmos Black metallic');
   
