@@ -1,6 +1,6 @@
 # DevSkiller Tasks Playwright project
 
-This is an testing automation project for DevSkiller Tasks 1, 2 and 3.
+This is a testing automation project for DevSkiller Tasks 1, 2 and 3.
 
 
 ## Table of Contents
