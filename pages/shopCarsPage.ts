@@ -120,7 +120,8 @@ export default class ShopCarsPage {
     const hasShowClass = await wrapper.evaluate(el => el.classList.contains('show'));
     if (!hasShowClass) {
       // Click the button if the 'show' class is not present
-      await this.filterToggle.click() 
+      // await this.filterToggle.click() 
+      await this.clickByMouseEventWorkaround(".filter-toggle")
     }
   }
   
