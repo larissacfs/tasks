@@ -1,10 +1,10 @@
-import { test as base } from "@playwright/test";
-import ShopCarsPage from "../pages/shopCarsPage";
+import { test as base } from '@playwright/test';
+import ShopCarsPage from '../pages/shopCarsPage';
 
 export const test = base.extend<{
   shopCarsPage: ShopCarsPage;
 }>({
-    shopCarsPage: async({page}, use) => {
+  shopCarsPage: async ({ page }, use) => {
     await use(new ShopCarsPage(page));
   }
 });

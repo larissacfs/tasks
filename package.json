@@ -2,13 +2,37 @@
   "name": "task2",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    " --- Formatting: ESLint and Prettier + Typescript compiler to support JS code ---- ": "",
+    "eslint": "eslint --report-unused-disable-directives --max-warnings=0 -c eslint.config.mjs .",
+    "eslint:fix": "yarn eslint --fix",
+    "prettier:cli": "prettier \"**/*.ts\"",
+    "prettier:check": "yarn prettier:cli -l",
+    "prettier:fix": "yarn prettier:cli --write --trailing-comma none --single-quote",
+    "lint:fix": "yarn ts:clear && yarn eslint:fix && yarn prettier:fix",
+    "ts:clear": "rm -rf dist",
+    "compile": "tsc && rm -rf dist",
+    "check:git:status": "sh sh_scripts/check_git_status.sh",
+    "lint:fix:unix": "yarn ts:clear && yarn eslint:fix && yarn prettier:cli --write --single-quote --trailing-comma none --end-of-line auto"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.48.1",
-    "@types/node": "^22.7.9"
+    "@types/node": "^22.7.9",
+    "@eslint/js": "9.11.1",
+    "@types/eslint__js": "8.42.3",
+    "@typescript-eslint/eslint-plugin": "8.8.0",
+    "@typescript-eslint/parser": "8.8.0",
+    "eslint": "9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-playwright": "1.6.2",
+    "globals": "15.10.0",
+    "prettier": "3.3.3",
+    "typescript": "5.6.2",
+    "typescript-eslint": "8.8.0",
+    "husky": "9.1.6"
   }
 }
