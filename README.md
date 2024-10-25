@@ -34,8 +34,11 @@ git clone https://github.com/larissacfs/tasks.git
 # Navigate into the directory
 cd repository-name
 
+# Install Yarn
+npm install -g yarn
+
 # Install dependencies 
-yarn
+yarn install
 
 # Init Husky
 npx husky-init
