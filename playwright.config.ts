@@ -13,7 +13,6 @@ export default defineConfig({
   workers: process.env.CI ? 4 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
-  timeout: 60000,
   use: {
     trace: 'retain-on-failure',
     baseURL: 'https://shop.mercedes-benz.com/en-au/shop/vehicle/srp/demo',
