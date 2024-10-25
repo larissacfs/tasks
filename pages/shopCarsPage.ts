@@ -114,15 +114,17 @@ export default class ShopCarsPage {
    * But when only click if the wrapper with the filter menu is not already opened.
    */
   async clickOnFilterToggle() {
+    await this.page.waitForTimeout(5000);
     // Locate the wrapper element
     const wrapper = this.page.locator('.wrapper');
     // Check if the wrapper element contains the 'show' class
     const hasShowClass = await wrapper.evaluate(el => el.classList.contains('show'));
     if (!hasShowClass) {
       // Click the button if the 'show' class is not present
-      // await this.filterToggle.click() 
-      await this.clickByMouseEventWorkaround(".filter-toggle")
+      await this.filterToggle.click() 
+      // await this.clickByMouseEventWorkaround(".filter-toggle")
     }
+    await expect(this.page.locator(".wrapper.show")).toBeVisible()
   }
   
   /**
