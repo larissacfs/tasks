@@ -52,7 +52,7 @@ git add .husky/pre-commit
 
 ## Usage
 
-- How to run the tests in all browsers 
+- How to run the tests in all browsers:
 
 ```bash
 yarn playwright test 
@@ -63,8 +63,8 @@ yarn playwright test
 yarn playwright test --project=chromium
 ```
 
-- How to manually trigger the pipeline
-The pipeline is triggered on a push or on pull requests to the main branch. To run manually, go to the Actions tab, click on "Playwright tests", then click on "Run workflow", chose a branch (main) and then click on "Run workflow".
+- How to manually trigger the pipeline: 
+<br/>The pipeline is triggered on a push or on pull requests to the main branch. To run manually, go to the Actions tab, click on "Playwright tests", then click on "Run workflow", chose a branch (main) and then click on "Run workflow".
 
 - Manual compilers run:
 
@@ -75,5 +75,5 @@ yarn compile
 # ESLint + Prettier auto fixes
 yarn lint:fix
 ```
-Whenever you make a commit, husky will run these two commands for you. Any fixes need to be added to the current commit (using git commit --amend --no-edit).
+Whenever you make a commit, husky will run these two commands for you. Any fixes need to be added to the current commit (using git commit --amend).
 
