@@ -15,7 +15,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     trace: 'retain-on-failure',
-    baseURL: "https://shop.mercedes-benz.com/en-au/shop/vehicle/srp/demo"
+    baseURL: "https://shop.mercedes-benz.com/en-au/shop/vehicle/srp/demo",
+    video: "retain-on-failure"
   },
 
   /* Configure projects for major browsers */
